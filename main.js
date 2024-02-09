@@ -5,7 +5,7 @@ let matrix = [
 ];
 
 function statusString(e) {
-  /*Comprueba si la cadena tiene acentos o mayusculas. En caso de tenerlas me salta un aviso error*/
+  /*Comprueba si la cadena tiene acentos o mayusculas. En caso de tenerlas salta un aviso error*/
   var string;
   try {
     string = e.value.trim();
