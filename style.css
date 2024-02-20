@@ -95,7 +95,7 @@ main {
 .container_box_text {
     position: absolute;
     left: 200px;
-    top: 100px;
+    top: 150px;
     padding-left: 100px;
     width: 1080px;
     height: 600px;
@@ -160,6 +160,28 @@ input {
     background-color: #F3F5FC;
     color: #0A3871;
     cursor: pointer;
+}
+
+.droplist{
+    position: absolute;
+    width: 940px;
+    height: 70px;
+    left: 300px;
+    padding-top: 70px;
+}
+
+.droplist label{
+    font-family: 'Inter', sans-serif;
+}
+
+.droplist select{
+    border-radius: 10px;
+    width: 90%;
+    height: 60%;
+    color: #0A3871;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
 }
 
 .sec_2 {

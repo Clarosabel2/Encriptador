@@ -104,6 +104,5 @@ function showResult(cadena) {
 
 function copyresult() {
   let txt = document.querySelector(".p_result");
-  txt.select();
-  document.execCommand("copy");
+  navigator.clipboard.writeText(txt.textContent);
 }
