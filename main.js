@@ -6,6 +6,7 @@ let matrix = [
 
 function statusString(e) {
   /*Comprueba si la cadena tiene acentos o mayusculas. En caso de tenerlas salta un aviso error*/
+
   var string;
   try {
     string = e.value.trim();
@@ -42,7 +43,6 @@ function statusString(e) {
   document.querySelector(".p_result").innerHTML = "";
   return flag;
 }
-
 function encrip() {
   /*se encarga de encriptar el texto ingresado por el usuario*/
   let i = 0,
@@ -106,3 +106,23 @@ function copyresult() {
   let txt = document.querySelector(".p_result");
   navigator.clipboard.writeText(txt.textContent);
 }
+
+function encrip_cesar(cadena, op) {
+  let result = "";
+  let i = 0;
+  while (i != cadena.length) {
+    let char = cadena[i];
+    if (char.match(/[a-z]/i)) {
+      let cod = cadena.charCodeAt(i);
+      if (cod >= 97 && cod <= 122) {
+        char = String.fromCharCode(((cod - 97 + 3) % 26) + 97);
+      }
+    }
+    result += char;
+    i++;
+  }
+  return char;
+}
+function encrip_vigenere(cadena, op) {}
+
+console.log(encrip_cesar("a", 1));
