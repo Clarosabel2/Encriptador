@@ -160,28 +160,5 @@ function encrip_cesar(cadena, op) {
   return result;
 }
 function encrip_vigenere(cadena, op) {
-  let clave = input.value;
-
-  let resultado = "";
-  let claveIndex = 0;
-
-  for (let i = 0; i < texto.length; i++) {
-    let caracter = texto[i];
-
-    // Solo ciframos caracteres alfabéticos
-    if (caracter.match(/[A-Z]/)) {
-      let textoCodigo = texto.charCodeAt(i) - 65; // Convertimos el caracter a un valor entre 0 y 25
-      let claveCodigo = clave.charCodeAt(claveIndex) - 65; // Convertimos el caracter de la clave a un valor entre 0 y 25
-
-      let codigoCifrado = (textoCodigo + claveCodigo) % 26; // Aplicamos el cifrado Vigenère
-
-      resultado += String.fromCharCode(codigoCifrado + 65); // Convertimos el valor cifrado a un caracter y lo añadimos al resultado
-
-      // Avanzamos al siguiente caracter de la clave, volviendo al principio si llegamos al final
-      claveIndex = (claveIndex + 1) % clave.length;
-    } else {
-      resultado += caracter; // Si no es un caracter alfabético, lo dejamos igual
-    }
-  }
-  return resultado;
+  
 }
