@@ -1,8 +1,19 @@
-var load = document.querySelector(".a-load");
+const load = document.querySelector(".a-load");
+const input = document.querySelector(".key-v");
+input.style.visibility = "hidden";
 let matrix = [
   ["a", "e", "i", "o", "u"],
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
+
+function showInput(e) {
+  const input = document.querySelector(".key-v");
+  if (e.selectedIndex == 2) {
+    input.style.visibility = "visible";
+  } else {
+    input.style.visibility = "hidden";
+  }
+}
 
 function statusString(e) {
   /*Comprueba si la cadena tiene acentos o mayusculas. En caso de tenerlas salta un aviso error*/
@@ -43,46 +54,33 @@ function statusString(e) {
   document.querySelector(".p_result").innerHTML = "";
   return flag;
 }
-function encrip() {
+function encrip(e) {
   /*se encarga de encriptar el texto ingresado por el usuario*/
-  let i = 0,
-    newString = "",
-    flag = false,
-    cadena = document.querySelector(".textbox").value;
+  let cadena = document.querySelector(".textbox").value;
+  let droplist = document.querySelector("#droplist-cod");
+  var op = droplist.selectedIndex;
+  var flag,
+    result = "";
 
-  if (statusString()) {
-    load.style.visibility = "hidden";
-    while (i != cadena.length) {
-      for (let k = 0; k <= matrix[0].length; k++) {
-        if (cadena[i] == matrix[0][k]) {
-          newString += matrix[1][k];
-          flag = true;
-        }
-      }
-      if (!flag) {
-        newString += cadena[i];
-      }
-      flag = false;
-      i++;
-    }
-    showResult(newString);
+  if (e.value == "Encriptar") {
+    flag = true;
+  } else {
+    flag = false;
   }
-}
-function desencrip() {
-  /*se encarga de desencriptar el texto ingresado por el usuario*/
-  let a = 0,
-    cadena = document.querySelector(".textbox").value;
   if (statusString()) {
     load.style.visibility = "hidden";
-    while (a != cadena.length) {
-      for (let i = 0; i <= matrix[0].length; i++) {
-        if (cadena.includes(matrix[1][i])) {
-          cadena = cadena.replace(matrix[1][i], matrix[0][i]);
-        }
-      }
-      a++;
+    switch (op) {
+      case 0:
+        result = encrip_default(cadena, flag);
+        break;
+      case 1:
+        result = encrip_cesar(cadena, flag);
+        break;
+      case 2:
+        result = encrip_vigenere(cadena, flag);
+        break;
     }
-    showResult(cadena);
+    showResult(result);
   }
 }
 
@@ -107,6 +105,40 @@ function copyresult() {
   navigator.clipboard.writeText(txt.textContent);
 }
 
+function encrip_default(cadena, op) {
+  let i = 0,
+    newString = "",
+    flag = false,
+    a = 0;
+  switch (op) {
+    case true:
+      while (i != cadena.length) {
+        for (let k = 0; k <= matrix[0].length; k++) {
+          if (cadena[i] == matrix[0][k]) {
+            newString += matrix[1][k];
+            flag = true;
+          }
+        }
+        if (!flag) {
+          newString += cadena[i];
+        }
+        flag = false;
+        i++;
+      }
+      return newString;
+    case false:
+      while (a != cadena.length) {
+        for (let i = 0; i <= matrix[0].length; i++) {
+          if (cadena.includes(matrix[1][i])) {
+            cadena = cadena.replace(matrix[1][i], matrix[0][i]);
+          }
+        }
+        a++;
+      }
+      return cadena;
+  }
+}
+
 function encrip_cesar(cadena, op) {
   let result = "";
   let i = 0;
@@ -115,14 +147,41 @@ function encrip_cesar(cadena, op) {
     if (char.match(/[a-z]/i)) {
       let cod = cadena.charCodeAt(i);
       if (cod >= 97 && cod <= 122) {
-        char = String.fromCharCode(((cod - 97 + 3) % 26) + 97);
+        if (op == true) {
+          char = String.fromCharCode(((cod - 97 + 3) % 26) + 97);
+        } else {
+          char = String.fromCharCode(((cod - 97 - 3) % 26) + 97);
+        }
       }
     }
     result += char;
     i++;
   }
-  return char;
+  return result;
 }
-function encrip_vigenere(cadena, op) {}
+function encrip_vigenere(cadena, op) {
+  let clave = input.value;
 
-console.log(encrip_cesar("a", 1));
+  let resultado = "";
+  let claveIndex = 0;
+
+  for (let i = 0; i < texto.length; i++) {
+    let caracter = texto[i];
+
+    // Solo ciframos caracteres alfabéticos
+    if (caracter.match(/[A-Z]/)) {
+      let textoCodigo = texto.charCodeAt(i) - 65; // Convertimos el caracter a un valor entre 0 y 25
+      let claveCodigo = clave.charCodeAt(claveIndex) - 65; // Convertimos el caracter de la clave a un valor entre 0 y 25
+
+      let codigoCifrado = (textoCodigo + claveCodigo) % 26; // Aplicamos el cifrado Vigenère
+
+      resultado += String.fromCharCode(codigoCifrado + 65); // Convertimos el valor cifrado a un caracter y lo añadimos al resultado
+
+      // Avanzamos al siguiente caracter de la clave, volviendo al principio si llegamos al final
+      claveIndex = (claveIndex + 1) % clave.length;
+    } else {
+      resultado += caracter; // Si no es un caracter alfabético, lo dejamos igual
+    }
+  }
+  return resultado;
+}

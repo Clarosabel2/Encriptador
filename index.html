@@ -24,11 +24,12 @@
         <section class="sec_1">
             <div class="droplist">
                 <label for="modos">Elije una modo de cifrado:</label>
-                <select name="modos" id="droplist-cod">
+                <select name="modos" id="droplist-cod" onchange="showInput(this)">
                     <option value="default">Default</option>
                     <option value="cesar">César</option>
                     <option value="vigenere">Vigenère</option>
                 </select>
+                <input class="key-v" type="text" placeholder="Clave" required>
             </div>
             <div class="container_box_text">
                 <textarea class="textbox" placeholder="Ingrese texto aqui..." oninput="statusString(this)"></textarea>
@@ -38,8 +39,8 @@
                 <p>Solo letras minúsculas y sin acentos</p>
             </div>
             <div class="container_box_buttons">
-                <input type="button" class="button_Encrip" value="Encriptar" onclick="encrip()">
-                <input type="button" class="button_Desencrip" value="Desencriptar" onclick="desencrip()">
+                <input type="button" class="button_Encrip" value="Encriptar" onclick="encrip(this)">
+                <input type="button" class="button_Desencrip" value="Desencriptar" onclick="encrip(this)">
             </div>
         </section>
         <section class="sec_2">
