@@ -6,12 +6,18 @@
 
 body {
     background-color: #F3F5FC;
+    transition: .3s ease all;
 }
 
+body.dark {
+    background: #1c1f20;
+}
+
+/*HEADER*/
 header {
     width: 10%;
-    height: 70px;
-    display: flex;
+    height: 100%;
+    display: inline;
     position: absolute;
 }
 
@@ -22,79 +28,81 @@ header {
     padding-left: 40px;
 }
 
-.l {
-	background-color: rgba(0,0,0,0.7);
-	border-radius: 0.75em;
-	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
-	color: #fdea7b;
+.switch {
+    top: 30px;
+    left: 130px;
+    background: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: absolute;
+    cursor: pointer;
     display: flex;
-	align-items: center;
-	margin: auto;
-	padding: 2px;
-	width: 3em;
-	height: 1.5em;
-	transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-.l:before, .l:after {
-	content: "";
-	display: block;
-}
-.l:before {
-	background-color: #d7d7d7;
-	border-radius: 50%;
-	width: 1.2em;
-	height: 1.2em;
-	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-	z-index: 1;
-}
-.l:after {
-	background:
-		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
-		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
-		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
-	background-repeat: no-repeat;
-	border: 0.25em solid transparent;
-	border-left: 0.4em solid #d8d8d8;
-	border-right: 0 solid transparent;
-	transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-	transform: translateX(-22.5%);
-	transform-origin: 25% 50%;
-	width: 1.2em;
-	height: 1em;
-}
-/* Checked */
-.l:checked {
-	background-color: rgba(0,0,0,0.45);
-	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
-}
-.l:checked:before {
-	background-color: currentColor;
-	transform: translateX(125%)
-}
-.l:checked:after {
-	border-left-color: currentColor;
-	transform: translateX(-2.5%) rotateY(180deg);
-}
-/* Other States */
-.l:focus {
-	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
-	outline: 0;
+    outline: none;
 }
 
-main {
-    display: contents;
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    width: 100%;
-    height: 90%;
-    justify-content: space-between;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
 }
+
+.switch.active {
+    background: orange;
+    color: #000;
+}
+
+.switch.active::after {
+    right: 0;
+    left: unset;
+}
+
+
+span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #FFF;
+}
+
+span i {
+    padding-top: 7.5px;
+}
+
+.fa-brands {
+    font-size: 2rem;
+    color: #0A3871;
+    position: absolute;
+    top: 900px;
+    padding: 40px 40px;
+    cursor: pointer;
+}
+
+/**/
+
+
+/*MAIN*/
+main {
+    display: flex;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    left: 10%;
+}
+
 
 .container_box_text {
     position: absolute;
-    left: 200px;
     top: 150px;
     padding-left: 100px;
     width: 1080px;
@@ -113,11 +121,22 @@ main {
     font-weight: 400;
     font-family: 'Inter', sans-serif;
     outline: none;
+    transition: .3s ease all;
 }
 
 .textbox::placeholder {
     color: #0A3871;
 }
+
+body.dark .textbox {
+    background: #1c1f20;
+    color: #4b9be9;
+}
+body.dark .textbox::placeholder {
+    background: #1c1f20;
+    color: #54728b;
+}
+
 .alert {
     visibility: hidden;
     position: absolute;
@@ -135,8 +154,9 @@ main {
     position: absolute;
     top: 800px;
     height: 80px;
-    padding-left: 15%;
+    padding-left: 100px;
     padding-top: 15px;
+
 }
 
 input {
@@ -161,20 +181,26 @@ input {
     color: #0A3871;
     cursor: pointer;
 }
+body.dark .button_Desencrip{
+    background: #1c1f20;
+    color: #4b9be9;
+}
 
-.droplist{
+.droplist {
     position: absolute;
     width: 940px;
     height: 70px;
-    left: 300px;
     padding-top: 70px;
+    left: 100px;
 }
 
-.droplist label{
+
+.droplist label {
     font-family: 'Inter', sans-serif;
 }
 
-.droplist select{
+.droplist select {
+    padding-left: 1rem;
     border-radius: 10px;
     width: 30%;
     height: 60%;
@@ -183,7 +209,17 @@ input {
     font-weight: 400;
     font-family: 'Inter', sans-serif;
 }
-.droplist .key-v{
+
+body.dark .droplist label {
+    color: #F3F5FC;
+}
+
+body.dark .droplist select {
+    color: #4b9be9;
+    background: #3b3b3b;
+}
+
+.droplist .key-v {
     width: 30%;
     height: 60%;
     border-radius: 10px;
@@ -194,6 +230,30 @@ input {
     padding-left: 1rem;
 }
 
+body.dark .key-v{
+    background: #1c1f20;
+    color: #4b9be9;
+}
+body.dark .key-v::placeholder{
+    color: #54728b;
+}
+
+.bx {
+    font-size: 1.5rem;
+    padding-top: 10px;
+    position: absolute;
+    transform: translateX(-50px);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+body.dark .bx{
+    color: #c1c3c9;
+}
+
+/**/
+
+/*Result*/
 .sec_2 {
     position: absolute;
     box-sizing: border-box;
@@ -205,8 +265,12 @@ input {
     background-color: #F3F5FC;
     border-radius: 32px;
     box-shadow: 10px 10px 50px #0A3871;
+    transition: .3s ease all;
 }
 
+body.dark .sec_2{
+    background-color: #1c1f20;
+}
 .container_puppet {
     position: absolute;
     left: 30px;
@@ -222,12 +286,16 @@ input {
     left: 40px;
 }
 
+
 .container_p h3 {
     font-size: 24px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
     text-align: center;
     color: #343A40;
+}
+body.dark .container_p h3{
+    color: #F3F5FC;
 }
 
 .container_p p {
@@ -237,6 +305,9 @@ input {
     text-align: center;
     color: #495057;
     padding-top: 20px;
+}
+body.dark .container_p p{
+    color: #c1c3c9;
 }
 
 .container_result {
@@ -249,7 +320,7 @@ input {
     margin-left: 27px;
 }
 
-.a-load{
+.a-load {
     width: 200px;
     height: 200px;
     position: absolute;
@@ -285,4 +356,11 @@ input {
     position: relative;
     top: 10px;
     right: 4px;
+    visibility: hidden;
+
+}
+
+body.dark .button_copy{
+    background: #1c1f20;
+    color: #4b9be9;
 }

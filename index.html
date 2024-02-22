@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codificador Challenge</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/271f7830bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <div>
-            <img class="logo_alura" src="img/logo.svg" alt="">
+            <img class="logo_alura" src="img/logo.svg" alt="Logo Alura">
         </div>
-        <input class="l" type="checkbox">
+        <button class="switch" id="switch">
+            <span><i class="fa-solid fa-sun"></i></span>
+            <span><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <i class="fa-brands fa-linkedin"></i>
     </header>
     <main>
         <section class="sec_1">
             <div class="droplist">
                 <label for="modos">Elije una modo de cifrado:</label>
                 <select name="modos" id="droplist-cod" onchange="showInput(this)">
-                    <option value="default">Default</option>
+                    <option value="alura">Alura</option>
                     <option value="cesar">César</option>
                     <option value="vigenere">Vigenère</option>
                 </select>
-                <input class="key-v" type="text" placeholder="Clave" required>
+                <input class="key-v" type="password" placeholder="Palabra clave..." required>
+                <i class='bx bx-show-alt'></i>
             </div>
             <div class="container_box_text">
                 <textarea class="textbox" placeholder="Ingrese texto aqui..." oninput="statusString(this)"></textarea>
@@ -44,7 +51,7 @@
             </div>
         </section>
         <section class="sec_2">
-            
+
             <div class="container_puppet">
                 <img src="img/Muñeco.png" alt="puppet">
             </div>

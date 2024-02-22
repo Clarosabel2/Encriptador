@@ -1,17 +1,40 @@
 const load = document.querySelector(".a-load");
 const input = document.querySelector(".key-v");
+const icon = document.querySelector(".bx");
+const btnSwitch = document.querySelector(".switch");
+const btncopy=document.querySelector(".button_copy");
 input.style.visibility = "hidden";
+
 let matrix = [
   ["a", "e", "i", "o", "u"],
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
 
+btnSwitch.addEventListener("click", (e) => {
+  document.body.classList.toggle('dark');
+  btnSwitch.classList.toggle('active');
+});
+
+icon.addEventListener("click", (e) => {
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("bx-show-alt");
+    icon.classList.add("bx-hide");
+  } else {
+    input.type = "password";
+    icon.classList.remove("bx-hide");
+    icon.classList.add("bx-show-alt");
+  }
+});
+
 function showInput(e) {
   const input = document.querySelector(".key-v");
   if (e.selectedIndex == 2) {
     input.style.visibility = "visible";
+    icon.style.visibility = "visible";
   } else {
     input.style.visibility = "hidden";
+    icon.style.visibility = "hidden";
   }
 }
 
@@ -30,6 +53,7 @@ function statusString(e) {
 
   if (string != "") {
     load.style.visibility = "visible";
+    btncopy.style.visibility="hidden";
     img.style.display = "none";
     p.style.display = "none";
     for (let i = 0; i < string.length; i++) {
@@ -58,7 +82,6 @@ function encrip(e) {
   /*se encarga de encriptar el texto ingresado por el usuario*/
   let cadena = document.querySelector(".textbox").value;
   let droplist = document.querySelector("#droplist-cod");
-  var op = droplist.selectedIndex;
   var flag,
     result = "";
 
@@ -69,7 +92,8 @@ function encrip(e) {
   }
   if (statusString()) {
     load.style.visibility = "hidden";
-    switch (op) {
+    btncopy.style.visibility="visible";
+    switch (droplist.selectedIndex) {
       case 0:
         result = encrip_default(cadena, flag);
         break;
@@ -160,5 +184,20 @@ function encrip_cesar(cadena, op) {
   return result;
 }
 function encrip_vigenere(cadena, op) {
-  
+  let i = 0,
+    a = 0;
+  const key = input.value;
+  while (i != cadena.length) {
+    let char = cadena[i];
+    if (char.match(/[a-z]/i)) {
+      let cod_cadena = cadena.charCodeAt(i);
+      console.log(cod_cadena);
+      while (a != key.length) {
+        char = key[a];
+      }
+      a++;
+    }
+    i++;
+  }
 }
+
