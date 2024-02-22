@@ -516,7 +516,9 @@ body.dark .button_copy {
         left: 70%;
         display: flex;
     }
-
+    .container_p{
+        left: 60px;
+    }
     .load-a {
         
         left: 100px;
