@@ -187,17 +187,5 @@ function encrip_vigenere(cadena, op) {
   let i = 0,
     a = 0;
   const key = input.value;
-  while (i != cadena.length) {
-    let char = cadena[i];
-    if (char.match(/[a-z]/i)) {
-      let cod_cadena = cadena.charCodeAt(i);
-      console.log(cod_cadena);
-      while (a != key.length) {
-        char = key[a];
-      }
-      a++;
-    }
-    i++;
-  }
 }
 
