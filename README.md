@@ -28,5 +28,5 @@ Extras:
 
 Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
 
-![image](https://github.com/Clarosabel2/Encriptador/assets/95495732/ea576521-4943-4e06-bbc2-e2547a244c68)
+![image](https://github.com/Clarosabel2/codificador/assets/95495732/996a9eb3-0316-4b58-b31c-c9ee5cd4ed1a)
 ![image](https://github.com/Clarosabel2/codificador/assets/95495732/c577c050-8d79-4890-b70f-41db3877b062)
