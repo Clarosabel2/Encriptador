@@ -2,7 +2,9 @@ const load = document.querySelector(".a-load");
 const input = document.querySelector(".key-v");
 const icon = document.querySelector(".bx");
 const btnSwitch = document.querySelector(".switch");
-const btncopy=document.querySelector(".button_copy");
+const btncopy = document.querySelector(".button_copy");
+const result_p = document.querySelector(".p_result");
+
 input.style.visibility = "hidden";
 
 let matrix = [
@@ -11,8 +13,8 @@ let matrix = [
 ];
 
 btnSwitch.addEventListener("click", (e) => {
-  document.body.classList.toggle('dark');
-  btnSwitch.classList.toggle('active');
+  document.body.classList.toggle("dark");
+  btnSwitch.classList.toggle("active");
 });
 
 icon.addEventListener("click", (e) => {
@@ -53,7 +55,7 @@ function statusString(e) {
 
   if (string != "") {
     load.style.visibility = "visible";
-    btncopy.style.visibility="hidden";
+    btncopy.style.visibility = "hidden";
     img.style.display = "none";
     p.style.display = "none";
     for (let i = 0; i < string.length; i++) {
@@ -92,7 +94,7 @@ function encrip(e) {
   }
   if (statusString()) {
     load.style.visibility = "hidden";
-    btncopy.style.visibility="visible";
+    btncopy.style.visibility = "visible";
     switch (droplist.selectedIndex) {
       case 0:
         result = encrip_default(cadena, flag);
@@ -104,6 +106,7 @@ function encrip(e) {
         result = encrip_vigenere(cadena, flag);
         break;
     }
+    result_p.style.visibility = "visible";
     showResult(result);
   }
 }
@@ -188,4 +191,3 @@ function encrip_vigenere(cadena, op) {
     a = 0;
   const key = input.value;
 }
-

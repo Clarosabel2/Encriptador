@@ -6,10 +6,10 @@
 
 body {
     background-color: #F3F5FC;
-    transition: .3s ease all;
     width: 100%;
     height: 100%;
 }
+
 
 body.dark {
     background: #1c1f20;
@@ -33,7 +33,7 @@ header {
 .switch {
     top: 30px;
     left: 130px;
-    background: #343D5B;
+    background: #0A3871;
     border-radius: 1000px;
     border: none;
     position: absolute;
@@ -66,7 +66,6 @@ header {
     right: 0;
     left: unset;
 }
-
 
 span {
     width: 30px;
@@ -165,14 +164,18 @@ input {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
-
     cursor: pointer;
+    border: 1px solid #0A3871;
 }
+
 
 .button_Encrip {
     background-color: #0A3871;
     color: white;
     border: none;
+}
+.button_Encrip:hover{
+    background: #105dbd;
 }
 
 .button_Desencrip {
@@ -180,6 +183,15 @@ input {
     color: #0A3871;
     cursor: pointer;
 }
+
+.button_Desencrip:hover,.button_copy:hover{
+    background: #c1c3c9;
+}
+
+body.dark .button_Desencrip:hover,body.dark .button_copy:hover{
+    background: #3d4446;
+}
+
 
 body.dark .button_Desencrip {
     background: #1c1f20;
@@ -285,7 +297,6 @@ body.dark .sec_2 {
     left: 40px;
 }
 
-
 .container_p h3 {
     font-size: 24px;
     font-weight: 700;
@@ -297,6 +308,7 @@ body.dark .sec_2 {
 body.dark .container_p h3 {
     color: #F3F5FC;
 }
+
 
 .container_p p {
     font-family: 'Inter', sans-serif;
@@ -312,16 +324,33 @@ body.dark .container_p p {
 }
 
 .container_result {
-    position: absolute;
+    display: flex;
     bottom: 330px;
-    width: 320px;
-    height: 450px;
+    width: 370px;
+    height: 650px;
     padding: 0;
+    padding-top: 10px;
     box-sizing: border-box;
     margin-left: 27px;
+    
 }
 
-.load-a{
+.p_result{
+    width: 360px;
+    height: 670px;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+}
+
+.p_result::-webkit-scrollbar{
+    width: 10px;
+}
+.p_result::-webkit-scrollbar-thumb{
+    
+    border-radius: 10px;
+    background: #105dbd;
+}
+.load-a {
     position: absolute;
 }
 
@@ -329,8 +358,8 @@ body.dark .container_p p {
     width: 200px;
     height: 200px;
     visibility: hidden;
+    filter: drop-shadow(7px 7px 7px #3296ff);
 }
-
 
 .container_result p {
     color: #495057;
@@ -358,13 +387,8 @@ body.dark .container_result p {
     font-size: 16px;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
-    border: 1px solid #0A3871;
     cursor: pointer;
-    position: relative;
-    top: 10px;
-    right: 4px;
     visibility: hidden;
-
 }
 
 body.dark .button_copy {
@@ -470,6 +494,7 @@ body.dark .button_copy {
 
 @media screen and (min-width:1024px) {
 
+   
     header {
         width: 10%;
         height: 100%;
@@ -508,20 +533,31 @@ body.dark .button_copy {
         padding-top: 15px;
     }
 
-    input {
+    input:not(.key-v) {
         margin-left: 20px;
+        transition: 1s all;
+    }
+
+    input:hover:not(.key-v){
+        transform: scale(1.1);
     }
 
     .sec_2 {
         left: 70%;
         display: flex;
     }
-    .container_p{
+
+    .container_p {
         left: 60px;
     }
+
     .load-a {
-        
+
         left: 100px;
         padding-top: 300px;
+    }
+    .button_copy{
+        position: relative;
+        right: 24px;
     }
 }
