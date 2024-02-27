@@ -250,16 +250,16 @@ body.dark .key-v::placeholder {
     color: #54728b;
 }
 
-.bx {
+.bi {
     font-size: 1.5rem;
     padding-top: 10px;
     position: absolute;
-    transform: translateX(-50px);
+    transform: translateX(-40px);
     cursor: pointer;
     visibility: hidden;
 }
 
-body.dark .bx {
+body.dark .bi {
     color: #c1c3c9;
 }
 

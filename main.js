@@ -1,6 +1,6 @@
 const load = document.querySelector(".a-load");
 const input = document.querySelector(".key-v");
-const icon = document.querySelector(".bx");
+const icon = document.querySelector(".bi");
 const btnSwitch = document.querySelector(".switch");
 const btncopy = document.querySelector(".button_copy");
 const result_p = document.querySelector(".p_result");
@@ -12,6 +12,10 @@ let matrix = [
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
 
+const abc = [ "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l",  "m",
+  "n",  "ñ",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z",
+];
+
 btnSwitch.addEventListener("click", (e) => {
   document.body.classList.toggle("dark");
   btnSwitch.classList.toggle("active");
@@ -20,12 +24,12 @@ btnSwitch.addEventListener("click", (e) => {
 icon.addEventListener("click", (e) => {
   if (input.type === "password") {
     input.type = "text";
-    icon.classList.remove("bx-show-alt");
-    icon.classList.add("bx-hide");
+    icon.classList.remove("bi-eye");
+    icon.classList.add("bi-eye-slash");
   } else {
     input.type = "password";
-    icon.classList.remove("bx-hide");
-    icon.classList.add("bx-show-alt");
+    icon.classList.remove("bi-eye-slash");
+    icon.classList.add("bi-eye");
   }
 });
 
@@ -186,8 +190,70 @@ function encrip_cesar(cadena, op) {
   }
   return result;
 }
-function encrip_vigenere(cadena, op) {
-  let i = 0,
+function encrip_vigenere(cadena, flag) {
+  var key = input.value;
+  key = key.replace(/ /g, "");
+  var string = cadena.replace(/ /g, "");
+  let result = "";
+  let keyComplete = "",
     a = 0;
-  const key = input.value;
+  let esp = [];
+
+  if (revision(key, string)) {
+    for (var i = 0; i < cadena.length; i++) {
+      if (cadena[i] == " ") {
+        esp[a] = i;
+        a++;
+      }
+    }
+    for (var i = 0; i < string.length; i++) {
+      keyComplete += key.charAt(i % Number(key.length));
+    }
+    for (var i = 0; i < string.length; i++) {
+      let charr = string.charAt(i);
+      let posm = getPosition(charr);
+
+      charr = keyComplete.charAt(i);
+
+      let posk = getPosition(charr);
+
+      let newValue = change(posm, posk, flag);
+
+      result += abc[newValue];
+    }
+    for (var i = 0; i < esp.length; i++) {
+      result = result.slice(0, esp[i]) + " " + result.slice(esp[i]);
+    }
+    return result;
+  }
+
+  function getPosition(char) {
+    let position = abc.indexOf(char);
+    return position;
+  }
+
+  function change(posm, posk, flag) {
+    let y = (posm + posk) % 27;
+    if (!flag && !(posm - posk) >= 0) {
+      y = (posm - posk + 27) % 27;
+    }
+    return y;
+  }
+
+  function revision(key, string) {
+    const re = /^([a-zñ?]+([]*[a-zñ?]?['-]?[a-zñ?]+)*)$/;
+    console.log(key.length + " " + string.length);
+    var flag = true;
+    if (!re.test(key)) {
+      flag = false;
+      alert("La palabra clave debe ser unicamente con letras");
+    }
+    if (key.length > string.length) {
+      alert(
+        "La palabra clave contener menos caracteres que el mensaje que desea des/encriptar"
+      );
+      flag = false;
+    }
+    return flag;
+  }
 }
