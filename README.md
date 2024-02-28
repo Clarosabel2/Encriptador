@@ -27,7 +27,7 @@ Tipos de Codificador
   "gato" => "gaitober"
   gaitober" => "gato"
 
-1. Cifrado César
+2. Cifrado César
   El cifrado César es uno de los métodos de cifrado más simples y conocidos. En este método, cada letra en el texto original es desplazada un cierto número de posiciones hacia la derecha en el alfabeto.
 
 3. Cifrado Vigenère
