@@ -256,7 +256,7 @@ function encrip_vigenere(cadena, flag) {
     }
     if (key.length > string.length) {
       alert(
-        "La palabra clave contener menos caracteres que el mensaje que desea des/encriptar"
+        "La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar"
       );
       flag = false;
     }
