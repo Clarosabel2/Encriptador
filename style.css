@@ -472,7 +472,6 @@ body.dark .button_copy {
     }
 
     .load-a {
-
         left: 100px;
         padding-top: 300px;
     }
@@ -535,6 +534,7 @@ body.dark .button_copy {
   @media (min-width: 320px) and (max-width: 480px) {
     
     /* CSS */
+    
     body{
         width: 100%;
         height: 100%;
@@ -628,7 +628,12 @@ body.dark .button_copy {
         top: 40px;
         left: 80px;
     }
-
+    .container_copy{
+        height: 10%;
+        display: flex;
+        justify-items: center;
+        right: 10%;
+    }
     .load-a {
         top: 10px;
         left: 120px;

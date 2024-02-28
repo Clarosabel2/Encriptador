@@ -1,9 +1,10 @@
-const load = document.querySelector(".a-load");
-const input = document.querySelector(".key-v");
-const icon = document.querySelector(".bi");
-const btnSwitch = document.querySelector(".switch");
-const btncopy = document.querySelector(".button_copy");
-const result_p = document.querySelector(".p_result");
+const load = document.querySelector(".a-load"),
+  input = document.querySelector(".key-v"),
+  icon = document.querySelector(".bi"),
+  btnSwitch = document.querySelector(".switch"),
+  btncopy = document.querySelector(".button_copy"),
+  result_p = document.querySelector(".p_result"),
+  droplist = document.querySelector("#droplist-cod");
 
 input.style.visibility = "hidden";
 
@@ -34,7 +35,12 @@ icon.addEventListener("click", (e) => {
 });
 
 function showInput(e) {
-  const input = document.querySelector(".key-v");
+  input.value = "";
+  if (droplist.selectedIndex == 2) {
+    input.type = "password";
+    icon.classList.remove("bi-eye-slash");
+    icon.classList.add("bi-eye");
+  }
   if (e.selectedIndex == 2) {
     input.style.visibility = "visible";
     icon.style.visibility = "visible";
@@ -87,7 +93,7 @@ function statusString(e) {
 function encrip(e) {
   /*se encarga de encriptar el texto ingresado por el usuario*/
   let cadena = document.querySelector(".textbox").value;
-  let droplist = document.querySelector("#droplist-cod");
+
   var flag,
     result = "";
 
