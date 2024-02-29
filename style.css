@@ -76,19 +76,18 @@ span {
     color: #FFF;
 }
 
-span i {
+span .fa-solid {
     padding-top: 7.5px;
 }
 
+.container-social{
+    align-items: center;
+}
 .fa-brands {
     font-size: 2rem;
     color: #0A3871;
-    position: absolute;
-    top: 900px;
-    padding: 40px 40px;
     cursor: pointer;
 }
-
 /**/
 
 
@@ -417,7 +416,15 @@ body.dark .button_copy {
         width: 10%;
         height: 100%;
     }
-
+    .container-social{
+        position: absolute;
+        display: flex;
+        width: 50%;
+        height: 10%;
+        justify-content: space-between;
+        top: 850px;
+        padding-left: 75px;  
+    }
     main {
         width: 90%;
         height: 896px;
