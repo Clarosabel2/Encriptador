@@ -584,7 +584,6 @@ body.dark .button_copy {
 
     .fa-brands {
         padding: 5px 5px;
-
     }
 
     main {
@@ -594,10 +593,14 @@ body.dark .button_copy {
         top: 10%;
     }
 
+    .sec_1{
+        width: 100%;
+        height: 100%;
+    }
     .droplist {
         top: 0px;
-        left: 10px;
-        width: 100%;
+        left: 10px   ;
+        width:96%;
         height: 100px;
     }
 
@@ -621,7 +624,7 @@ body.dark .button_copy {
         position: absolute;
         top: 100px;
         padding-left: 10px;
-        width: 100%;
+        width: 95%;
         height: 400px;
     }
 
@@ -650,8 +653,9 @@ body.dark .button_copy {
 
     .sec_2 {
         position: absolute;
+        display: flex;
+        justify-items: center;
         width: 100%;
-        left: 0px;
         top: 600px;
     }
 
