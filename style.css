@@ -17,8 +17,6 @@ body.dark {
 
 /*HEADER*/
 header {
-    width: 10%;
-    height: 100%;
     display: inline;
     position: absolute;
 }
@@ -80,14 +78,16 @@ span .fa-solid {
     padding-top: 7.5px;
 }
 
-.container-social{
+.container-social {
     align-items: center;
 }
+
 .fa-brands {
     font-size: 2rem;
     color: #0A3871;
     cursor: pointer;
 }
+
 /**/
 
 
@@ -173,7 +173,8 @@ input {
     color: white;
     border: none;
 }
-.button_Encrip:hover{
+
+.button_Encrip:hover {
     background: #105dbd;
 }
 
@@ -183,11 +184,13 @@ input {
     cursor: pointer;
 }
 
-.button_Desencrip:hover,.button_copy:hover{
+.button_Desencrip:hover,
+.button_copy:hover {
     background: #c1c3c9;
 }
 
-body.dark .button_Desencrip:hover,body.dark .button_copy:hover{
+body.dark .button_Desencrip:hover,
+body.dark .button_copy:hover {
     background: #3d4446;
 }
 
@@ -331,24 +334,26 @@ body.dark .container_p p {
     padding-top: 10px;
     box-sizing: border-box;
     margin-left: 27px;
-    
+
 }
 
-.p_result{
+.p_result {
     width: 360px;
     height: 670px;
     overflow-wrap: break-word;
     overflow-y: scroll;
 }
 
-.p_result::-webkit-scrollbar{
+.p_result::-webkit-scrollbar {
     width: 10px;
 }
-.p_result::-webkit-scrollbar-thumb{
-    
+
+.p_result::-webkit-scrollbar-thumb {
+
     border-radius: 10px;
     background: #105dbd;
 }
+
 .load-a {
     position: absolute;
 }
@@ -395,10 +400,7 @@ body.dark .button_copy {
     color: #4b9be9;
 }
 
-@media screen and (max-width:767px) {
-
-    
-}
+@media screen and (max-width:767px) {}
 
 /* 
   ##Device = Desktops
@@ -406,31 +408,33 @@ body.dark .button_copy {
 */
 
 @media (min-width: 1281px) {
-  
+
     /* CSS */
-    body{
-        overflow-y: none;
-    }
-   
     header {
         width: 10%;
         height: 100%;
     }
-    .container-social{
+
+    .container-social {
         position: absolute;
         display: flex;
-        width: 50%;
         height: 10%;
         justify-content: space-between;
         top: 850px;
-        padding-left: 75px;  
+        padding-left: 75px;
     }
+
+    .fa-brands {
+        padding: 10px 10px;
+    }
+
     main {
         width: 90%;
         height: 896px;
         margin-top: 5%;
         left: 10%;
     }
+
     .sec_1 {
         position: relative;
         left: 10%;
@@ -464,7 +468,7 @@ body.dark .button_copy {
         transition: 1s all;
     }
 
-    input:hover:not(.key-v){
+    input:hover:not(.key-v) {
         transform: scale(1.1);
     }
 
@@ -482,81 +486,105 @@ body.dark .button_copy {
         left: 100px;
         padding-top: 300px;
     }
-    .button_copy{
+
+    .button_copy {
         position: relative;
         right: 24px;
     }
-  }
-  
-  /* 
+}
+
+/* 
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
   */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
     /* CSS */
-    
-  }
-  
-  /* 
+
+}
+
+/* 
     ##Device = Tablets, Ipads (portrait)
     ##Screen = B/w 768px to 1024px
   */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
     /* CSS */
-    
-  }
-  
-  /* 
+
+}
+
+/* 
     ##Device = Tablets, Ipads (landscape)
     ##Screen = B/w 768px to 1024px
   */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
     /* CSS */
-    
-  }
-  
-  /* 
+
+}
+
+/* 
     ##Device = Low Resolution Tablets, Mobiles (Landscape)
     ##Screen = B/w 481px to 767px
   */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
+
+@media (min-width: 481px) and (max-width: 767px) {
+
     /* CSS */
-    
-    
-  }
-  
-  /* 
+
+
+}
+
+/* 
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 320px to 479px
   */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
+
+@media (min-width: 320px) and (max-width: 480px) {
+
     /* CSS */
-    
-    body{
+
+    body {
         width: 100%;
         height: 100%;
     }
+
     header {
         width: 100%;
         height: 10%;
+        position: absolute;
+        display: flex;
+    }
+
+    .container-logo {
+        width: 80px;
+        height: 80px;
     }
 
     div .logo_alura {
-        padding-left: 10px;
+        padding-left: 5px;
     }
 
     .switch {
         float: inline-start;
+    }
+
+    .container-social {
+        width: 20%;
+        height: 50%;
+        top: 20px;
+        right: 0%;
+        display: flex;
+        position: absolute;
+
+    }
+
+    .fa-brands {
+        padding: 5px 5px;
+
     }
 
     main {
@@ -630,18 +658,21 @@ body.dark .button_copy {
     .container_puppet {
         top: 100px;
     }
+
     .container_p {
         top: 40px;
         left: 80px;
     }
-    .container_copy{
+
+    .container_copy {
         height: 10%;
         display: flex;
         justify-items: center;
         right: 10%;
     }
+
     .load-a {
         top: 10px;
         left: 120px;
     }
-  }
+}
