@@ -1,5 +1,3 @@
-import { alert_error } from './sweetAlert.js';
-
 const load = document.querySelector(".a-load"),
   input = document.querySelector(".key-v"),
   icon = document.querySelector(".bi"),
@@ -78,10 +76,17 @@ function statusString(e) {
         string[i] !== string[i].toLowerCase()
       ) {
         flag = false;
+        alertError("El mensaje a des/encriptar debe ser en minuscula.");
         break;
       }
       if (/[áéíóúÁÉÍÓÚ]/.test(string)) {
         flag = false;
+        alertError("El mensaje a des/encriptar no debe contener acentos.");
+        break;
+      }
+      if(/\d+/.test(string)){
+        flag=true;
+        alertError("Unicamente se puede ingresar letras.");
         break;
       }
     }
@@ -90,10 +95,24 @@ function statusString(e) {
     img.style.display = "";
     p.style.display = "";
   }
-  showAlert(flag);
   document.querySelector(".p_result").innerHTML = "";
   return flag;
 }
+
+
+function alertError(txt){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: txt,
+    confirmButtonText: 'Ok',
+    confirmButtonColor:"#0A3871",
+    
+  });
+  var txt=document.querySelector(".textbox");
+    txt.value=txt.value.substring(0,txt.length-1);
+}
+
 function encrip(e) {
   /*se encarga de encriptar el texto ingresado por el usuario*/
   let cadena = document.querySelector(".textbox").value;
@@ -126,16 +145,7 @@ function encrip(e) {
 }
 
 
-function showAlert(flag) {
-  var div = document.querySelector(".alert");
-  if (!flag) {
-    div.style.display = "";
-    div.style.visibility = "visible";
-  } else {
-    div.style.display = "none";
-    div.style.visibility = "hidden";
-  }
-}
+
 
 function showResult(cadena) {
   var p = document.querySelector(".p_result");
@@ -256,18 +266,13 @@ function encrip_vigenere(cadena, flag) {
     console.log(key.length + " " + string.length);
     var flag = true;
     if (!re.test(key)) {
+      alertError("La palabra clave debe ser unicamente con letras");
       flag = false;
-      alert("La palabra clave debe ser unicamente con letras");
     }
     if (key.length > string.length) {
-      alert(
-        "La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar"
-      );
+      alertError("La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar");
       flag = false;
     }
     return flag;
   }
 }
-
-
-alert_error("hola")

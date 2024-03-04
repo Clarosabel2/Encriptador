@@ -138,18 +138,6 @@ body.dark .textbox::placeholder {
     color: #54728b;
 }
 
-.alert {
-    visibility: hidden;
-    position: absolute;
-    top: 750px;
-    left: 350px;
-    display: flex;
-    color: #495057;
-}
-
-.alert p {
-    padding-left: 10px;
-}
 
 .container_box_buttons {
     position: absolute;
@@ -397,6 +385,8 @@ body.dark .button_copy {
     color: #4b9be9;
 }
 
+
+
 @media screen and (max-width:767px) {}
 
 /* 
@@ -448,11 +438,6 @@ body.dark .button_copy {
         top: 60px;
     }
 
-    .alert {
-        left: 0px;
-        position: relative;
-        top: 600px;
-    }
 
     .container_box_buttons {
         width: 800px;
@@ -632,10 +617,7 @@ body.dark .button_copy {
         width: 100%;
     }
 
-    .alert {
-        left: 30px;
-        top: 450px;
-    }
+    
 
     .container_box_buttons {
         width: 100%;
