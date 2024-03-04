@@ -6,14 +6,41 @@ const load = document.querySelector(".a-load"),
   result_p = document.querySelector(".p_result"),
   droplist = document.querySelector("#droplist-cod");
 
+var msg = "";
 
 let matrix = [
   ["a", "e", "i", "o", "u"],
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
 
-const abc = [ "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l",  "m",
-  "n",  "ñ",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z",
+const abc = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "ñ",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 
 //Cambio de tema dark-light
@@ -54,12 +81,13 @@ function showInput(e) {
 
 function statusString(e) {
   /*Comprueba si la cadena tiene acentos o mayusculas. En caso de tenerlas salta un aviso error*/
-
-  var string;
+  var string, fg;
   try {
     string = e.value.trim();
+    fg = true;
   } catch (error) {
     string = document.querySelector(".textbox").value;
+    fg = false;
   }
   let flag = true;
   var img = document.querySelector(".container_puppet");
@@ -69,7 +97,7 @@ function statusString(e) {
     load.style.visibility = "visible";
     btncopy.style.visibility = "hidden";
     img.style.display = "none";
-    p.style.display = "none"; 
+    p.style.display = "none";
     for (let i = 0; i < string.length; i++) {
       if (
         string[i] === string[i].toUpperCase() &&
@@ -79,16 +107,22 @@ function statusString(e) {
         alertError("El mensaje a des/encriptar debe ser en minuscula.");
         break;
       }
-      if (/[áéíóúÁÉÍÓÚ]/.test(string)) {
+      if (/[áéíóúàèìòù]/.test(string)) {
         flag = false;
-        alertError("El mensaje a des/encriptar no debe contener acentos.");
+        alertError("El mensaje a des/encriptar no debe contener tildes.");
         break;
       }
-      if(/\d+/.test(string)){
-        flag=true;
+      if (/\d+/.test(string)) {
+        flag = false;
         alertError("Unicamente se puede ingresar letras.");
         break;
       }
+    }
+    if (flag && fg) {
+      msg = string;
+    }
+    if (!flag) {
+      document.querySelector(".textbox").value = msg;
     }
   } else {
     load.style.visibility = "hidden";
@@ -99,18 +133,14 @@ function statusString(e) {
   return flag;
 }
 
-
-function alertError(txt){
+function alertError(txt) {
   Swal.fire({
     icon: "error",
     title: "Oops...",
     text: txt,
-    confirmButtonText: 'Ok',
-    confirmButtonColor:"#0A3871",
-    
+    confirmButtonText: "Ok",
+    confirmButtonColor: "#0A3871",
   });
-  var txt=document.querySelector(".textbox");
-    txt.value=txt.value.substring(0,txt.length-1);
 }
 
 function encrip(e) {
@@ -144,14 +174,10 @@ function encrip(e) {
   }
 }
 
-
-
-
 function showResult(cadena) {
   var p = document.querySelector(".p_result");
   p.innerHTML = `${cadena}`;
 }
-
 
 function copyresult() {
   let txt = document.querySelector(".p_result");
@@ -233,7 +259,7 @@ function encrip_vigenere(cadena, flag) {
     for (var i = 0; i < string.length; i++) {
       let charr = string.charAt(i);
       let posm = getPosition(charr);
-      
+
       charr = keyComplete.charAt(i);
       let posk = getPosition(charr);
 
@@ -247,7 +273,6 @@ function encrip_vigenere(cadena, flag) {
     return result;
   }
 
-  
   function getPosition(char) {
     let position = abc.indexOf(char);
     return position;
@@ -270,7 +295,9 @@ function encrip_vigenere(cadena, flag) {
       flag = false;
     }
     if (key.length > string.length) {
-      alertError("La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar");
+      alertError(
+        "La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar"
+      );
       flag = false;
     }
     return flag;
