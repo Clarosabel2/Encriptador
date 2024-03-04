@@ -97,9 +97,11 @@ main {
     position: absolute;
     width: 90%;
     height: 90%;
-
 }
 
+.key-v{
+    visibility: hidden;
+}
 
 .container_box_text {
     position: absolute;
@@ -292,12 +294,7 @@ body.dark .sec_2 {
     padding-top: 50px;
 }
 
-.container_p {
-    position: absolute;
-    box-sizing: border-box;
-    top: 570;
-    left: 40px;
-}
+
 
 .container_p h3 {
     font-size: 24px;
@@ -479,7 +476,10 @@ body.dark .button_copy {
     }
 
     .container_p {
-        left: 60px;
+        position: absolute;
+        box-sizing: border-box;
+        top: 570;
+        left: 40px;
     }
 
     .load-a {
@@ -664,8 +664,12 @@ body.dark .button_copy {
     }
 
     .container_p {
-        top: 40px;
-        left: 80px;
+        width: 70%;
+        height: 10%;
+        top: 30px;
+        left: 15%;
+        position: absolute;
+        align-items: center;
     }
 
     .container_copy {

@@ -1,3 +1,5 @@
+import { alert_error } from './sweetAlert.js';
+
 const load = document.querySelector(".a-load"),
   input = document.querySelector(".key-v"),
   icon = document.querySelector(".bi"),
@@ -6,7 +8,6 @@ const load = document.querySelector(".a-load"),
   result_p = document.querySelector(".p_result"),
   droplist = document.querySelector("#droplist-cod");
 
-input.style.visibility = "hidden";
 
 let matrix = [
   ["a", "e", "i", "o", "u"],
@@ -17,6 +18,7 @@ const abc = [ "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  
   "n",  "ñ",  "o",  "p",  "q",  "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z",
 ];
 
+//Cambio de tema dark-light
 btnSwitch.addEventListener("click", (e) => {
   document.body.classList.toggle("dark");
   btnSwitch.classList.toggle("active");
@@ -36,11 +38,13 @@ icon.addEventListener("click", (e) => {
 
 function showInput(e) {
   input.value = "";
+  //Reseteo del Input Palabra clave
   if (droplist.selectedIndex == 2) {
     input.type = "password";
     icon.classList.remove("bi-eye-slash");
     icon.classList.add("bi-eye");
   }
+  //Muestra la input palabra clave en caso que sea selecionado el metodo vigenere
   if (e.selectedIndex == 2) {
     input.style.visibility = "visible";
     icon.style.visibility = "visible";
@@ -67,7 +71,7 @@ function statusString(e) {
     load.style.visibility = "visible";
     btncopy.style.visibility = "hidden";
     img.style.display = "none";
-    p.style.display = "none";
+    p.style.display = "none"; 
     for (let i = 0; i < string.length; i++) {
       if (
         string[i] === string[i].toUpperCase() &&
@@ -121,6 +125,7 @@ function encrip(e) {
   }
 }
 
+
 function showAlert(flag) {
   var div = document.querySelector(".alert");
   if (!flag) {
@@ -136,6 +141,7 @@ function showResult(cadena) {
   var p = document.querySelector(".p_result");
   p.innerHTML = `${cadena}`;
 }
+
 
 function copyresult() {
   let txt = document.querySelector(".p_result");
@@ -204,7 +210,6 @@ function encrip_vigenere(cadena, flag) {
   let keyComplete = "",
     a = 0;
   let esp = [];
-
   if (revision(key, string)) {
     for (var i = 0; i < cadena.length; i++) {
       if (cadena[i] == " ") {
@@ -218,9 +223,8 @@ function encrip_vigenere(cadena, flag) {
     for (var i = 0; i < string.length; i++) {
       let charr = string.charAt(i);
       let posm = getPosition(charr);
-
+      
       charr = keyComplete.charAt(i);
-
       let posk = getPosition(charr);
 
       let newValue = change(posm, posk, flag);
@@ -233,6 +237,7 @@ function encrip_vigenere(cadena, flag) {
     return result;
   }
 
+  
   function getPosition(char) {
     let position = abc.indexOf(char);
     return position;
@@ -263,3 +268,6 @@ function encrip_vigenere(cadena, flag) {
     return flag;
   }
 }
+
+
+alert_error("hola")
