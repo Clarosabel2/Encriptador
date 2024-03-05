@@ -118,11 +118,8 @@ function statusString(e) {
         break;
       }
     }
-    if (flag && fg) {
-      msg = string;
-    }
     if (!flag) {
-      document.querySelector(".textbox").value = msg;
+      deleteChar();
     }
   } else {
     load.style.visibility = "hidden";
@@ -131,6 +128,11 @@ function statusString(e) {
   }
   document.querySelector(".p_result").innerHTML = "";
   return flag;
+
+  function deleteChar() {
+    string = string.substring(0, string.length - 1);
+    document.querySelector(".textbox").value = string;
+  }
 }
 
 function alertError(txt) {
@@ -188,8 +190,7 @@ function encrip_default(cadena, op) {
   let i = 0,
     newString = "",
     flag = false,
-    a = 0,
-    string = cadena;
+    a = 0;
   switch (op) {
     case true:
       while (i != cadena.length) {
@@ -209,12 +210,12 @@ function encrip_default(cadena, op) {
     case false:
       for (let i = 0; i < cadena.length; i++) {
         flag = true;
-        a=0;
+        a = 0;
         while (a != matrix[0].length) {
           if (cadena[i] == matrix[0][a]) {
             newString += matrix[0][a];
             flag = false;
-            i += (matrix[1][a].length-1);
+            i += matrix[1][a].length - 1;
           }
           a++;
           if (!flag) {
@@ -299,7 +300,6 @@ function encrip_vigenere(cadena, flag) {
 
   function revision(key, string) {
     const re = /^([a-zñ?]+([]*[a-zñ?]?['-]?[a-zñ?]+)*)$/;
-    console.log(key.length + " " + string.length);
     var flag = true;
     if (!re.test(key)) {
       alertError("La palabra clave debe ser unicamente con letras");
@@ -307,7 +307,7 @@ function encrip_vigenere(cadena, flag) {
     }
     if (key.length > string.length) {
       alertError(
-        "La palabra clave debe contener menos caracteres que el mensaje que desea des/encriptar"
+        "La palabra clave debe ser menor que el mensaje que desea des/encriptar"
       );
       flag = false;
     }

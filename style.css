@@ -460,12 +460,16 @@ body.dark .button_copy {
         display: flex;
     }
 
+    .container_puppet{
+        right: 30px;
+    }
     .container_p {
         position: absolute;
         box-sizing: border-box;
         top: 570;
-        left: 40px;
+        left: 61px;
     }
+
 
     .load-a {
         left: 100px;
@@ -584,7 +588,7 @@ body.dark .button_copy {
     }
     .droplist {
         top: 0px;
-        left: 10px   ;
+        left: 10px;
         width:96%;
         height: 100px;
     }
@@ -596,13 +600,12 @@ body.dark .button_copy {
     }
 
     .droplist .key-v {
-        width: 160px;
+        width: 35%;
         height: 40px;
-        left: 100px;
     }
 
     .key-v::placeholder {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .container_box_text {
