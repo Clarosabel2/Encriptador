@@ -188,7 +188,8 @@ function encrip_default(cadena, op) {
   let i = 0,
     newString = "",
     flag = false,
-    a = 0;
+    a = 0,
+    string = cadena;
   switch (op) {
     case true:
       while (i != cadena.length) {
@@ -206,15 +207,25 @@ function encrip_default(cadena, op) {
       }
       return newString;
     case false:
-      while (a != cadena.length) {
-        for (let i = 0; i <= matrix[0].length; i++) {
-          if (cadena.includes(matrix[1][i])) {
-            cadena = cadena.replace(matrix[1][i], matrix[0][i]);
+      for (let i = 0; i < cadena.length; i++) {
+        flag = true;
+        a=0;
+        while (a != matrix[0].length) {
+          if (cadena[i] == matrix[0][a]) {
+            newString += matrix[0][a];
+            flag = false;
+            i += (matrix[1][a].length-1);
+          }
+          a++;
+          if (!flag) {
+            break;
           }
         }
-        a++;
+        if (flag) {
+          newString += cadena[i];
+        }
       }
-      return cadena;
+      return newString;
   }
 }
 
