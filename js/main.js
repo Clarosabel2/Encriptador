@@ -282,6 +282,7 @@ function showResult(cadena) {
 }
 
 function copyresult() {
+  //Copia el mensaje encriptado
   let txt = document.querySelector(".p_result");
   navigator.clipboard.writeText(txt.textContent);
 }
