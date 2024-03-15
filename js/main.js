@@ -13,35 +13,9 @@ let matrix = [
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
 
-const abc = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "ñ",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+const abc = [ "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",
+              "j",  "k",  "l",  "m",  "n",  "ñ",  "o",  "p",  "q",
+              "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z"];
 
 //Cambio de tema dark-light
 btnSwitch.addEventListener("click", (e) => {
@@ -148,10 +122,7 @@ function alertError(txt) {
 function encrip(e) {
   /*se encarga de encriptar el texto ingresado por el usuario*/
   let cadena = document.querySelector(".textbox").value;
-
-  var flag,
-    result = "";
-
+  var flag;
   if (e.value == "Encriptar") {
     flag = true;
   } else {
@@ -162,28 +133,17 @@ function encrip(e) {
     btncopy.style.visibility = "visible";
     switch (droplist.selectedIndex) {
       case 0:
-        result = encrip_default(cadena, flag);
+        showResult(encrip_default(cadena, flag));
         break;
       case 1:
-        result = encrip_cesar(cadena, flag);
+        showResult(encrip_cesar(cadena, flag));
         break;
       case 2:
-        result = encrip_vigenere(cadena, flag);
+        showResult(encrip_vigenere(cadena, flag));
         break;
     }
     result_p.style.visibility = "visible";
-    showResult(result);
   }
-}
-
-function showResult(cadena) {
-  var p = document.querySelector(".p_result");
-  p.innerHTML = `${cadena}`;
-}
-
-function copyresult() {
-  let txt = document.querySelector(".p_result");
-  navigator.clipboard.writeText(txt.textContent);
 }
 
 function encrip_default(cadena, op) {
@@ -313,4 +273,14 @@ function encrip_vigenere(cadena, flag) {
     }
     return flag;
   }
+}
+
+function showResult(cadena) {
+  var p = document.querySelector(".p_result");
+  p.innerHTML = `${cadena}`;
+}
+
+function copyresult() {
+  let txt = document.querySelector(".p_result");
+  navigator.clipboard.writeText(txt.textContent);
 }
