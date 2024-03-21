@@ -389,7 +389,7 @@ body.dark .button_copy {
 
 @media (min-width: 1369px) {
 
-    /* CSS */
+   
     header {
         width: 10%;
         height: 100%;
@@ -476,7 +476,7 @@ body.dark .button_copy {
     }
 }
 
-@media screen and (max-width: 1368px){
+@media screen and (max-width: 1368px) and (min-width: 481px){
     header {
         width: 10%;
         height: 100%;
@@ -593,9 +593,9 @@ body.dark .button_copy {
     }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
 
-    /* CSS */
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 480px) {
 
     body {
         width: 100%;
