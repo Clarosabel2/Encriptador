@@ -279,6 +279,7 @@ function showResult(cadena) {
   //Muestra el mensaje encriptado al usuario
   var p = document.querySelector(".p_result");
   p.innerHTML = `${cadena}`;
+  document.querySelector(".load-a").style.visibility = "hidden";
 }
 
 function copyresult() {

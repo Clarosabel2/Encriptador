@@ -99,7 +99,7 @@ main {
     height: 90%;
 }
 
-.key-v{
+.key-v {
     visibility: hidden;
 }
 
@@ -387,14 +387,7 @@ body.dark .button_copy {
 
 
 
-@media screen and (max-width:767px) {}
-
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
+@media (min-width: 1369px) {
 
     /* CSS */
     header {
@@ -460,9 +453,10 @@ body.dark .button_copy {
         display: flex;
     }
 
-    .container_puppet{
+    .container_puppet {
         right: 30px;
     }
+
     .container_p {
         position: absolute;
         box-sizing: border-box;
@@ -482,55 +476,122 @@ body.dark .button_copy {
     }
 }
 
-/* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
+@media screen and (max-width: 1368px){
+    header {
+        width: 10%;
+        height: 100%;
+    }
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+    .container-social {
+        position: absolute;
+        display: flex;
+        height: 10%;
+        justify-content: space-between;
+        top: 90%;
+        padding-left: 40px;
+    }
 
-    /* CSS */
+    .fa-brands {
+        padding: 10px 10px;
+    }
 
+    main {
+        width: 90%;
+        height: 90%;
+        margin-top: 5%;
+        left: 10%;
+    }
+
+    .sec_1 {
+        position: relative;
+        left: 5%;
+        width: 50%;
+        height: 80%;
+    }
+
+    .droplist {
+        left: 0px;
+        width: 750px;
+    }
+    #droplist-cod{
+        font-size: 1.5rem;
+    }
+    .key-v{
+        font-size: 1.5rem;
+    }
+    .key-v::placeholder{
+        font-size: 1.5rem;
+    }
+    .container_box_text {
+        position: absolute;
+        height: 90%;
+        width: 100%;
+        top: 60px;
+    }
+
+    .container_box_buttons {
+        width: 750px;
+        top: 90%;
+        padding-top: 15px;
+    }
+
+    
+    input:not(.key-v) {
+        margin-left: 20px;
+        transition: 1s all;
+        width: 250px;
+    }
+
+    input:hover:not(.key-v) {
+        transform: scale(1.1);
+    }
+
+    .sec_2 {
+        transform: translateY(calc(-30px));
+        display: flex;
+        left: 60%;
+        height: 100%;
+    }
+
+    .container_puppet {
+        top: 70px;
+        width: 100%;
+        height: 30%;
+        align-content: center;
+    }
+    .container_p {
+        position: absolute;
+        box-sizing: border-box;
+        top: 400px;
+        left: 61px;
+    }
+    .load-a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .container_result{
+        height: 80%;
+    }
+    .p_result{
+        height: 100%;
+    }
+    .container_copy{
+        top: 85%;
+        width: 90%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    .button_copy {
+        position: relative;
+        right: 24px;
+        
+    }
 }
-
-/* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-    /* CSS */
-
-}
-
-/* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    /* CSS */
-
-}
-
-/* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-    /* CSS */
-
-
-}
-
-/* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
 
 @media (min-width: 320px) and (max-width: 480px) {
 
@@ -582,14 +643,15 @@ body.dark .button_copy {
         top: 10%;
     }
 
-    .sec_1{
+    .sec_1 {
         width: 100%;
         height: 100%;
     }
+
     .droplist {
         top: 0px;
         left: 10px;
-        width:96%;
+        width: 96%;
         height: 100px;
     }
 
@@ -620,7 +682,7 @@ body.dark .button_copy {
         width: 100%;
     }
 
-    
+
 
     .container_box_buttons {
         width: 100%;
@@ -669,3 +731,5 @@ body.dark .button_copy {
         left: 120px;
     }
 }
+
+
