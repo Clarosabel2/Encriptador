@@ -122,6 +122,16 @@ main {
     font-family: 'Inter', sans-serif;
     outline: none;
     transition: .3s ease all;
+    overflow-y: scroll;
+}
+
+.textbox::-webkit-scrollbar {
+    width: 10px;
+}
+
+.textbox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #0A3871;
 }
 
 .textbox::placeholder {
@@ -156,7 +166,6 @@ input {
     cursor: pointer;
     border: 1px solid #0A3871;
 }
-
 
 .button_Encrip {
     background-color: #0A3871;
@@ -196,7 +205,6 @@ body.dark .button_Desencrip {
     height: 70px;
     left: 100px;
 }
-
 
 .droplist label {
     font-family: 'Inter', sans-serif;
@@ -282,8 +290,6 @@ body.dark .sec_2 {
     padding-top: 50px;
 }
 
-
-
 .container_p h3 {
     font-size: 24px;
     font-weight: 700;
@@ -295,7 +301,6 @@ body.dark .sec_2 {
 body.dark .container_p h3 {
     color: #F3F5FC;
 }
-
 
 .container_p p {
     font-family: 'Inter', sans-serif;
@@ -334,9 +339,8 @@ body.dark .container_p p {
 }
 
 .p_result::-webkit-scrollbar-thumb {
-
     border-radius: 10px;
-    background: #105dbd;
+    background: #0A3871;
 }
 
 .load-a {
@@ -347,7 +351,8 @@ body.dark .container_p p {
     width: 200px;
     height: 200px;
     visibility: hidden;
-    filter: drop-shadow(7px 7px 7px #3296ff);
+    filter: drop-shadow(7px 7px 20px #3296ff);
+    overflow: hidden;
 }
 
 .container_result p {
