@@ -394,7 +394,6 @@ body.dark .button_copy {
 
 @media (min-width: 1369px) {
 
-   
     header {
         width: 10%;
         height: 100%;
@@ -429,13 +428,13 @@ body.dark .button_copy {
 
     .droplist {
         left: 0px;
+        align-items: center;
     }
 
     .container_box_text {
         position: absolute;
         top: 60px;
     }
-
 
     .container_box_buttons {
         width: 800px;
@@ -517,11 +516,21 @@ body.dark .button_copy {
     .droplist {
         left: 0px;
         width: 750px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .bi{
+        right: 11%;
+        top: 14px;
+        translate: calc(-15px);
     }
     #droplist-cod{
+        width: 27%;
         font-size: 1.5rem;
     }
     .key-v{
+        width: 27%;
         font-size: 1.5rem;
     }
     .key-v::placeholder{
@@ -594,7 +603,6 @@ body.dark .button_copy {
     .button_copy {
         position: relative;
         right: 24px;
-        
     }
 }
 
@@ -686,8 +694,6 @@ body.dark .button_copy {
     .textbox {
         width: 100%;
     }
-
-
 
     .container_box_buttons {
         width: 100%;
