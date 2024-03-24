@@ -12,11 +12,11 @@ let matrix = [
   ["a", "e", "i", "o", "u"],
   ["ai", "enter", "imes", "ober", "ufat"],
 ];
-/*
+
 const abc = [ "a",  "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",
               "j",  "k",  "l",  "m",  "n",  "ñ",  "o",  "p",  "q",
               "r",  "s",  "t",  "u",  "v",  "w",  "x",  "y",  "z"];
-*/
+
 //Cambio de tema dark-light
 btnSwitch.addEventListener("click", (e) => {
   document.body.classList.toggle("dark");
