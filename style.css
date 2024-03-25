@@ -675,8 +675,10 @@ body.dark .button_copy {
     }
 
     .droplist .key-v {
-        width: 35%;
+        width: 40%;
         height: 40px;
+        padding-top:10px;
+        
     }
 
     .key-v::placeholder {
