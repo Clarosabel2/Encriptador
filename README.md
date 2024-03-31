@@ -1,7 +1,7 @@
 # Encripta y Desencripta Tus Mensajes
 
 ## Descripción
- Es una aplicación web interactiva diseñada para proporcionar una herramienta de comunicación segura y educativa. Permite a los usuarios encriptar y desencriptar mensajes utilizando tres técnicas diferentes: Cifrado de César, Cifrado de Vigenère, y un método único de sustitución de vocales. Diseñada para ser accesible para criptógrafos de todos los niveles, desde principiantes hasta avanzados, también ofrece una interfaz con modos claro y oscuro, mejorando la experiencia de usuario bajo cualquier preferencia de visualización.
+ Es una aplicación web interactiva diseñada para proporcionar una herramienta de comunicación segura y educativa. Permite a los usuarios encriptar y desencriptar mensajes utilizando tres técnicas diferentes: Cifrado de César, Cifrado de Vigenère, y un método de sustitución de vocales. Diseñada para ser accesible para criptógrafos de todos los niveles, desde principiantes hasta avanzados, también ofrece una interfaz con modos claro y oscuro, mejorando la experiencia de usuario bajo cualquier preferencia de visualización.
 
 ### Características
 - **Tres Métodos de Cifrado**: Elige entre Cifrado de César, Cifrado de Vigenère, y nuestro método de sustitución de vocales único para encriptar tus mensajes.
@@ -10,7 +10,7 @@
 - **Totalmente Responsiva**: Disfruta de la aplicación en cualquier dispositivo, gracias a su diseño responsivo.
 
 ## Tecnologías Utilizadas
-[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+[!(https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
 ## Cómo usarlo
 1. **Selecciona el Método de Cifrado**: En la página principal, elige uno de los tres métodos de cifrado disponibles.
