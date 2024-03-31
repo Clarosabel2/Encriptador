@@ -1,7 +1,7 @@
-# CipherApp: Encripta y Desencripta Tus Mensajes
+# Encripta y Desencripta Tus Mensajes
 
 ## Descripción
-**CipherApp** es una aplicación web interactiva diseñada para proporcionar una herramienta de comunicación segura y educativa. Permite a los usuarios encriptar y desencriptar mensajes utilizando tres técnicas diferentes: Cifrado de César, Cifrado de Vigenère, y un método único de sustitución de vocales. Diseñada para ser accesible para criptógrafos de todos los niveles, desde principiantes hasta avanzados, CipherApp también ofrece una interfaz con modos claro y oscuro, mejorando la experiencia de usuario bajo cualquier preferencia de visualización.
+ Es una aplicación web interactiva diseñada para proporcionar una herramienta de comunicación segura y educativa. Permite a los usuarios encriptar y desencriptar mensajes utilizando tres técnicas diferentes: Cifrado de César, Cifrado de Vigenère, y un método único de sustitución de vocales. Diseñada para ser accesible para criptógrafos de todos los niveles, desde principiantes hasta avanzados, CipherApp también ofrece una interfaz con modos claro y oscuro, mejorando la experiencia de usuario bajo cualquier preferencia de visualización.
 
 ### Características
 - **Tres Métodos de Cifrado**: Elige entre Cifrado de César, Cifrado de Vigenère, y nuestro método de sustitución de vocales único para encriptar tus mensajes.
@@ -12,14 +12,11 @@
 ## Tecnologías Utilizadas
 [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
-## Cómo Usar CipherApp
+## Cómo usarlo
 1. **Selecciona el Método de Cifrado**: En la página principal, elige uno de los tres métodos de cifrado disponibles.
 2. **Ingresa Tu Mensaje**: Escribe el mensaje que deseas encriptar o desencriptar en el campo correspondiente.
 3. **Configura Tu Cifrado**: Para el Cifrado de César y Vigenère, establece los valores necesarios como el desplazamiento o la palabra clave. Para la sustitución de vocales, simplemente procede al siguiente paso.
 4. **Encripta/Desencripta**: Haz clic en el botón para encriptar o desencriptar tu mensaje, y el resultado aparecerá instantáneamente.
-5. **Modo Oscuro/Claro**: Cambia entre modos de visualización usando el interruptor proporcionado en la interfaz.
-
-
 
 
 Light Theme
