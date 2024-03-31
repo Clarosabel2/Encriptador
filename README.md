@@ -10,7 +10,7 @@
 - **Totalmente Responsiva**: Disfruta de la aplicación en cualquier dispositivo, gracias a su diseño responsivo.
 
 ## Tecnologías Utilizadas
-[!(https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
 ## Cómo usarlo
 1. **Selecciona el Método de Cifrado**: En la página principal, elige uno de los tres métodos de cifrado disponibles.
