@@ -1,37 +1,26 @@
-Este proyecto trata de un codificador y decodificador que cuenta con 3 metodos de cifrado que contiene los siguientes requisitos: 
+# CipherApp: Encripta y Desencripta Tus Mensajes
 
--Debe funcionar solo con letras minúsculas
--No deben ser utilizados letras con acentos ni caracteres especiales
--Debe ser posible convertir una palabra para la versión encriptada también devolver una palabra encriptada para su versión original.
--La página debe tener campos parainserción del texto que será encriptado o desencriptado, y el usuario debe poder escoger entre as dos opciones.
--El resultado debe ser mostrado en la pantalla.
--Cuenta con modo oscuro
+## Descripción
+**CipherApp** es una aplicación web interactiva diseñada para proporcionar una herramienta de comunicación segura y educativa. Permite a los usuarios encriptar y desencriptar mensajes utilizando tres técnicas diferentes: Cifrado de César, Cifrado de Vigenère, y un método único de sustitución de vocales. Diseñada para ser accesible para criptógrafos de todos los niveles, desde principiantes hasta avanzados, CipherApp también ofrece una interfaz con modos claro y oscuro, mejorando la experiencia de usuario bajo cualquier preferencia de visualización.
 
-Extras:
+### Características
+- **Tres Métodos de Cifrado**: Elige entre Cifrado de César, Cifrado de Vigenère, y nuestro método de sustitución de vocales único para encriptar tus mensajes.
+- **Interfaz Amigable**.
+- **Modo Oscuro y Claro**: Ajusta la interfaz según tus preferencias de visualización o las condiciones de luz ambiental.
+- **Totalmente Responsiva**: Disfruta de la aplicación en cualquier dispositivo, gracias a su diseño responsivo.
 
-Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
+## Tecnologías Utilizadas
+[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
-Tipos de Codificador
-
-1. Las "llaves" de encriptación que utilizaremos son las siguientes:
-
-  La letra "e" es convertida para "enter"
-  La letra "i" es convertida para "imes"
-  La letra "a" es convertida para "ai"
-  La letra "o" es convertida para "ober"
-  La letra "u" es convertida para "ufat"
+## Cómo Usar CipherApp
+1. **Selecciona el Método de Cifrado**: En la página principal, elige uno de los tres métodos de cifrado disponibles.
+2. **Ingresa Tu Mensaje**: Escribe el mensaje que deseas encriptar o desencriptar en el campo correspondiente.
+3. **Configura Tu Cifrado**: Para el Cifrado de César y Vigenère, establece los valores necesarios como el desplazamiento o la palabra clave. Para la sustitución de vocales, simplemente procede al siguiente paso.
+4. **Encripta/Desencripta**: Haz clic en el botón para encriptar o desencriptar tu mensaje, y el resultado aparecerá instantáneamente.
+5. **Modo Oscuro/Claro**: Cambia entre modos de visualización usando el interruptor proporcionado en la interfaz.
 
 
 
-  Por ejemplo:
-  "gato" => "gaitober"
-  gaitober" => "gato"
-
-2. Cifrado César
-  El cifrado César es uno de los métodos de cifrado más simples y conocidos. En este método, cada letra en el texto original es desplazada un cierto número de posiciones hacia la derecha en el alfabeto.
-
-3. Cifrado Vigenère
-   El cifrado Vigenère es un cifrado de sustitución polialfabética que utiliza una palabra clave para cifrar el texto. Cada letra del texto original es desplazada de acuerdo a las letras correspondientes en la palabra clave.
 
 Light Theme
 ![image](https://github.com/Clarosabel2/codificador/assets/95495732/996a9eb3-0316-4b58-b31c-c9ee5cd4ed1a)
